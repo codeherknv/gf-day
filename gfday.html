@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Happy Girlfriend Day! 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300;500&display=swap');
+
+    :root {
+      --bg-color: #0c0c0c; 
+      --card-bg: #161616;
+      --text-main: #f0f0f0;
+      --text-sub: #b0b0b0;
+      
+   
+      --pink-main: #ff60a8; 
+      --pink-soft: #ff8abf;
+      --pink-glow: rgba(255, 96, 168, 0.4);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 96, 168, 0.12), transparent 20%),
+        radial-gradient(circle at bottom right, rgba(255, 138, 191, 0.14), transparent 18%),
+        linear-gradient(180deg, #060507 0%, #0c0a11 100%);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 30px;
+      position: relative;
+    }
+
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--pink-main);
+      font-size: 3.8rem;
+      text-shadow: 0 0 25px var(--pink-glow);
+      text-align: center;
+      margin-bottom: 5px;
+      animation: titlePulse 3s ease-in-out infinite, titleFloat 4.5s ease-in-out infinite;
+      position: relative;
+      letter-spacing: 0.08em;
+      line-height: 1.05;
+    }
+
+    h1::before,
+    h1::after {
+      content: '💖';
+      position: absolute;
+      top: -14px;
+      font-size: 1.1rem;
+      opacity: 0.85;
+      animation: heartBounce 3.2s ease-in-out infinite;
+    }
+
+    h1::before {
+      left: -40px;
+      animation-delay: 0s;
+    }
+
+    h1::after {
+      right: -40px;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes titlePulse {
+      0%, 100% { transform: scale(1); color: var(--pink-main); text-shadow: 0 0 18px rgba(255,96,168,0.8), 0 0 28px rgba(255,138,191,0.4); }
+      50% { transform: scale(1.02); color: #ff8ad0; text-shadow: 0 0 30px rgba(255,96,168,1), 0 0 40px rgba(255,138,191,0.65); }
+    }
+
+    @keyframes titleFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes heartBounce {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.85; }
+      50% { transform: translateY(-10px) scale(1.15); opacity: 1; }
+    }
+
+    .highlight-name {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255, 96, 168, 0.95));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 35px rgba(255, 96, 168, 0.5);
+      position: relative;
+    }
+
+    .highlight-name::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 96, 168, 0.5);
+      opacity: 0.7;
+      filter: blur(6px);
+    }
+
+    .highlight-name {
+      position: relative;
+    }
+
+    .sub-title {
+      font-size: 1rem;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Core Container for Elements */
+    .content {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: relative; /* Floating hearts relative to this */
+      z-index: 10;
+      padding: 20px;
+      border: 1px solid rgba(255, 96, 168, 0.12);
+      border-radius: 32px;
+      background: rgba(18, 10, 18, 0.65);
+      box-shadow: inset 0 0 80px rgba(255, 96, 168, 0.08), 0 30px 80px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Cards - The Container Units */
+    .card {
+      background: rgba(22, 16, 28, 0.92);
+      text-align: center;
+      border-radius: 24px;
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 96, 168, 0.05);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .card:nth-child(2) { animation-delay: 0.3s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 96, 168, 0.25), rgba(255, 138, 191, 0.18));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: source-out;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .card h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.45rem;
+      color: var(--pink-soft);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .card h2::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 3px;
+      margin: 13px auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,96,168,0.95), rgba(255,138,191,0.65));
+    }
+
+    /* Floating Hearts Background (Creative LDR Detail) */
+    .heart-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .photo-wall {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .photo-box {
+      position: absolute;
+      width: clamp(200px, 20vw, 240px);
+      height: 260px;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+      border: 2px solid rgba(255, 96, 168, 0.95);
+      box-shadow: 0 32px 75px rgba(255, 96, 168, 0.26);
+      color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      padding: 0;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 22px;
+    }
+
+    .photo-left {
+      left: 18px;
+    }
+
+    .photo-right {
+      right: 18px;
+    }
+
+    @media screen and (max-width: 900px) {
+      .photo-wall {
+        display: none;
+      }
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 0.65; }
+      70% { opacity: 0.9; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    .heart {
+      position: absolute;
+      color: var(--pink-main);
+      filter: drop-shadow(0 0 8px var(--pink-glow));
+      animation: floatUp 10s linear infinite;
+      opacity: 0;
+    }
+
+    /* Note Card */
+    .note-text {
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+
+    /* Interactive Reason Button */
+    .interactive-btn {
+      background: linear-gradient(135deg, rgba(255, 96, 168, 0.15), rgba(255, 138, 191, 0.12));
+      border: 2px solid rgba(255, 96, 168, 0.7);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 14px 28px;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 96, 168, 0.1);
+    }
+
+    .interactive-btn:hover {
+      background: linear-gradient(135deg, var(--pink-main), var(--pink-soft));
+      color: #fff;
+      box-shadow: 0 0 25px rgba(255, 96, 168, 0.45);
+      transform: translateY(-1px);
+    }
+
+    #reason-display {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: var(--pink-soft);
+      font-weight: 300;
+      line-height: 1.6;
+      text-align: center;
+      min-height: 50px;
+    }
+
+    .reason-card,
+    .choice-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .choice-question {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin-bottom: 18px;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .choice-options {
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      min-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .choice-btn {
+      background: transparent;
+      border: 2px solid var(--pink-main);
+      color: var(--pink-main);
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .choice-btn:hover {
+      background: rgba(255, 96, 168, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .choice-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      pointer-events: none;
+    }
+
+    #me-btn {
+      position: relative;
+    }
+
+    .choice-result {
+      margin-top: 14px;
+      min-height: 24px;
+      color: var(--pink-soft);
+      font-size: 0.95rem;
+    }
+
+    .wordle-card {
+      text-align: center;
+      padding-top: 26px;
+    }
+
+    .wordle-grid {
+      display: grid;
+      gap: 8px;
+      justify-content: center;
+      margin: 0 auto 18px;
+      width: max-content;
+    }
+
+    .wordle-grid-row {
+      display: grid;
+      grid-template-columns: repeat(7, 52px);
+      gap: 8px;
+      justify-items: center;
+    }
+
+    .wordle-cell {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .wordle-cell.correct {
+      background: #2ecc71;
+      border-color: #2ecc71;
+    }
+
+    .wordle-cell.present {
+      background: #f1c40f;
+      border-color: #f1c40f;
+      color: #1e1e1e;
+    }
+
+    .wordle-cell.wrong {
+      background: #7f8c8d;
+      border-color: #7f8c8d;
+    }
+
+    .wordle-keyboard {
+      display: grid;
+      gap: 10px;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 100%;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+
+    .wordle-card {
+      border: 1px solid rgba(255, 96, 168, 0.14);
+      background: rgba(26, 14, 28, 0.95);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.55), inset 0 0 2px rgba(255, 255, 255, 0.03);
+    }
+
+    .hug-card {
+      border: 1px solid rgba(255, 138, 191, 0.22);
+      background: rgba(30, 12, 32, 0.97);
+      box-shadow: 0 15px 55px rgba(0, 0, 0, 0.55), inset 0 0 4px rgba(255, 96, 168, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hug-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255, 96, 168, 0.12), transparent 25%),
+                  radial-gradient(circle at bottom right, rgba(255, 138, 191, 0.12), transparent 22%);
+      pointer-events: none;
+    }
+
+    .hug-button {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 138, 191, 0.95);
+      background: radial-gradient(circle at 30% 30%, rgba(255, 96, 168, 0.95), rgba(255, 96, 168, 0.2));
+      color: white;
+      font-size: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+      box-shadow: 0 0 25px rgba(255, 96, 168, 0.35);
+      overflow: hidden;
+    }
+
+    .hug-button::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .hug-button.holding::after {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(255, 138, 191, 0.6);
+    }
+
+    .hug-button:active {
+      transform: scale(0.96);
+    }
+
+    .hug-instruction {
+      margin-top: 18px;
+      color: var(--text-sub);
+      font-size: 1rem;
+      letter-spacing: 0.6px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hug-counter {
+      margin-top: 22px;
+      font-size: 1.15rem;
+      color: var(--pink-soft);
+      font-weight: 600;
+      min-height: 28px;
+    }
+
+    .hug-result {
+      margin-top: 10px;
+      color: var(--text-main);
+      font-size: 0.96rem;
+      line-height: 1.6;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hug-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hug-overlay.active {
+      opacity: 1;
+    }
+
+    .hug-particle {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255, 138, 191, 0.9);
+      box-shadow: 0 0 12px rgba(255, 96, 168, 0.8);
+      pointer-events: none;
+      animation: floatHearts 1.6s ease-out forwards;
+    }
+
+    .finale-card {
+      position: relative;
+      border: 1px solid rgba(255, 64, 64, 0.2);
+      background: rgba(30, 8, 16, 0.98);
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 64, 64, 0.08);
+      overflow: hidden;
+    }
+
+    .finale-card h2 {
+      margin-bottom: 18px;
+    }
+
+    .finale-button {
+      background: linear-gradient(135deg, rgba(255, 80, 80, 0.95), rgba(255, 160, 160, 0.9));
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 16px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 25px rgba(255, 80, 80, 0.4);
+    }
+
+    .finale-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(255, 80, 80, 0.55);
+    }
+
+    .finale-button:active {
+      transform: scale(0.98);
+    }
+
+    .finale-msg {
+      margin-top: 18px;
+      color: var(--text-main);
+      font-size: 1rem;
+      line-height: 1.6;
+      min-height: 28px;
+    }
+
+    .finale-bomb {
+      font-size: 4rem;
+      line-height: 1;
+      display: block;
+      margin: 0 auto 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .finale-bomb.throbbing {
+      animation: bombPulse 1s ease-in-out infinite;
+    }
+
+    .finale-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .finale-hidden {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes bombPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes floatHearts {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-200px) translateX(30px) scale(0.3); opacity: 0; }
+    }
+
+    .keyboard-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: max-content;
+    }
+
+    .keyboard-key {
+      min-width: 44px;
+      width: 44px;
+      height: 52px;
+      padding: 0 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: transform 0.1s ease, background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .large-key {
+      min-width: 72px;
+      width: auto;
+      padding: 0 14px;
+    }
+
+    .keyboard-key:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .large-key {
+      min-width: 72px;
+    }
+
+    .keyboard-key.correct {
+      background: #2ecc71;
+      border-color: #2ecc71;
+      color: #1e1e1e;
+    }
+
+    .keyboard-key.present {
+      background: #f1c40f;
+      border-color: #f1c40f;
+      color: #1e1e1e;
+    }
+
+    .keyboard-key.wrong {
+      background: #7f8c8d;
+      border-color: #7f8c8d;
+      color: #1e1e1e;
+    }
+
+    .wordle-message {
+      margin-top: 14px;
+      min-height: 24px;
+      color: var(--pink-soft);
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="heart-bg" id="heart-bg"></div>
+  <div class="photo-wall" id="photo-wall" aria-hidden="true"></div>
+  <h1>💓 Happy Girlfriend's Day <span class="highlight-name">Rashiee</span> ✨💓</h1>
+  <p class="sub-title">GRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR!!!</p>
+
+  <div class="content">
+    
+    <!-- LDR Note -->
+    <div class="card">
+      <h2>💌💌A Little Note for You💌💌</h2>
+      <p class="note-text">
+        Every day I spend with you is a gift. Even though we are apart, 
+        my heart is always right there with youuuuu,I love to talk with youuu,love your voice love your smile love your eyes love literally everything about youuu mffffff you are so perfect agrhrghahgagaghahahga, I cannot wait until I can hold youuuu,
+        you are in my mind always thinking about youuu, I love you so so so so so so so so so so so so so so so so so so so so so muchhhhhhhhhhh!!!!!!!!!!
+      </p>
+    </div>
+
+    <!-- Reason Interactive Section -->
+    <div class="card reason-card">
+      <h2>☝️Why I Love You🫣😳</h2>
+      <button class="interactive-btn" onclick="showReason()">Click Here</button>
+      <div id="reason-display">Click to see one reason.</div>
+    </div>
+
+    <!-- Who Loves More Section -->
+    <div class="card choice-card">
+      <h2>Who Loves Who More?🤔💭</h2>
+      <p class="choice-question">Who loves the other person the most?</p>
+      <div class="choice-options" id="choice-options">
+        <button class="choice-btn" id="me-btn" onclick="handleChoice('me')">Rashi</button>
+        <button class="choice-btn" id="you-btn" onclick="handleChoice('you')">Kanav</button>
+      </div>
+      <div class="choice-result" id="choice-result"></div>
+    </div>
+
+    <!-- Tap Counter Hug Section -->
+    <div class="card hug-card">
+      <h2>mwahh send me cuddles and kisses😋🥺🥺</h2>
+      <button class="hug-button" id="hug-button">💗</button>
+      <p class="hug-instruction">Hold the heart for sending me them🥺</p>
+      <div class="hug-counter" id="hug-counter">Held 0 times</div>
+      <div class="hug-result" id="hug-result">Hold the heart to send a virtual cuddle across the distance.</div>
+    </div>
+
+    <div class="hug-overlay" id="hug-overlay"></div>
+
+    <!-- Wordle Style Game -->
+    <div class="card wordle-card">
+      <h2>Guess the Secret Word🤫</h2>
+      <div id="wordle-grid" class="wordle-grid"></div>
+      <div id="wordle-keyboard" class="wordle-keyboard"></div>
+      <div id="wordle-message" class="wordle-message">Guess the 7-letter word in 6 tries☝️☝️.</div>
+    </div>
+
+    <!-- Finale Explosion Card -->
+    <div class="card finale-card finale-hidden" id="finale-card">
+      <span class="finale-bomb throbbing" id="finale-bomb">💣</span>
+      <h2>Come Fast / Meet Me Before I Explode😧😧😓</h2>
+      <button class="finale-button" id="defuse-button">Defuse Bomb (Click Me!)</button>
+      <div class="finale-msg" id="finale-msg"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Create Floating Hearts effect
+    function createHearts() {
+      const container = document.getElementById('heart-bg');
+      const count = 80; // total number of floating hearts
+
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerText = '💖'; // Heart icon
+
+        // Randomize positions, sizes, and animation delay
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 120 + 'vh';
+        heart.style.fontSize = Math.random() * 1.2 + 0.7 + 'rem'; // 0.7 - 1.9 rem
+        heart.style.animationDelay = Math.random() * 8 + 's'; // random staggered start
+        heart.style.animationDuration = Math.random() * 8 + 8 + 's'; // random 8-16 sec rise
+
+        container.appendChild(heart);
+      }
+    }
+    const photoFiles = [
+      'photos/WhatsApp Image 2026-07-29 at 5.10.05 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.09.16 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.09.01 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.07.17 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.07.17 PM (3).jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.07.17 PM (2).jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.07.17 PM (1).jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.07.16 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.06.35 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-29 at 5.06.19 PM.jpeg',
+      'photos/WhatsApp Image 2026-07-28 at 1.02.45 AM.jpeg',
+      'photos/ab1ba250-5c9e-48d5-9dde-65cd4a61f280.jpg',
+      'photos/3e4698a6-8823-4fbb-87a9-e5b4b80b66c4.jpg',
+      'photos/WhatsApp Image 2026-07-29 at 4.49.14 PM.jpeg'
+    ];
+
+    createHearts(); // start hearts on load
+    updatePhotoWall();
+
+    function updatePhotoWall() {
+      const wall = document.getElementById('photo-wall');
+      const finaleCard = document.getElementById('finale-card');
+      const endY = finaleCard ? finaleCard.offsetTop + finaleCard.offsetHeight : document.documentElement.scrollHeight;
+      const startTop = 120;
+      const boxHeight = 260;
+      const spacing = boxHeight + 140;
+      const rowCount = 7;
+
+      wall.innerHTML = '';
+
+      for (let i = 0; i < rowCount; i++) {
+        const leftPhoto = document.createElement('div');
+        const rightPhoto = document.createElement('div');
+        const leftShift = i % 2 === 0 ? 18 : 42;
+        const rightShift = i % 2 === 0 ? 18 : 42;
+        const leftTop = startTop + i * spacing + (i % 2 === 0 ? 0 : 40);
+        const rightTop = startTop + i * spacing + (i % 2 === 0 ? 40 : 0);
+        const leftIndex = i * 2;
+        const rightIndex = i * 2 + 1;
+
+        leftPhoto.className = 'photo-box photo-left';
+        leftPhoto.style.top = `${leftTop}px`;
+        leftPhoto.style.left = `${leftShift}px`;
+        leftPhoto.style.transform = `rotate(${i % 2 === 0 ? '-5deg' : '5deg'})`;
+        leftPhoto.appendChild(createPhotoImage(photoFiles[leftIndex] || photoFiles[0], `Photo ${leftIndex + 1}`));
+
+        rightPhoto.className = 'photo-box photo-right';
+        rightPhoto.style.top = `${rightTop}px`;
+        rightPhoto.style.right = `${rightShift}px`;
+        rightPhoto.style.transform = `rotate(${i % 2 === 0 ? '5deg' : '-5deg'})`;
+        rightPhoto.appendChild(createPhotoImage(photoFiles[rightIndex] || photoFiles[(rightIndex - 1) % photoFiles.length], `Photo ${rightIndex + 1}`));
+
+        wall.appendChild(leftPhoto);
+        wall.appendChild(rightPhoto);
+      }
+    }
+
+    function createPhotoImage(src, alt) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = alt;
+      return img;
+    }
+
+    window.addEventListener('scroll', updatePhotoWall);
+    window.addEventListener('resize', updatePhotoWall);
+
+    // Reasons Generator - CUSTOMIZE THESE!
+    const reasons = [
+      "Your smile lights up my entire universe😍🥰.",
+      "The way you laugh at my silly jokes is my favorite thing😘😘.",
+      "Our daily video calls are the best part of my day🥰🥰.",
+      "Because you make me feel calm when everything is chaotic😘😘.",
+      "I love how we can talk for hours about nothing at all🥰🥰.",
+      "Because I've never known a heart as kind as yours😘😘.",
+      "you sooooooooooooooooooooooo cuteeeeeeeeeeeeeeeeeeeeeeeeeeeeeee arhaagah😍😍😍😍😍🥰🥰🥰🥰🥰."
+    ];
+
+    function showReason() {
+      const display = document.getElementById('reason-display');
+      const randomIndex = Math.floor(Math.random() * reasons.length);
+      
+      // Add subtle fade in animation when text changes
+      display.style.opacity = 0;
+      setTimeout(() => {
+        display.innerText = reasons[randomIndex];
+        display.style.opacity = 1;
+        display.style.transition = 'opacity 0.4s';
+      }, 100);
+    }
+
+    function handleChoice(choice) {
+      const result = document.getElementById('choice-result');
+      const meBtn = document.getElementById('me-btn');
+      const options = document.getElementById('choice-options');
+
+      if (choice === 'me') {
+        result.innerText = 'Aww, you tried to pick yourself 😜';
+      } else {
+        result.innerText = 'Aww, that is such a sweet answer truee 💖';
+      }
+    }
+
+    const meBtn = document.getElementById('me-btn');
+    const options = document.getElementById('choice-options');
+
+    function moveMeButton() {
+      const maxLeft = Math.max(0, options.clientWidth - meBtn.offsetWidth);
+      const maxTop = Math.max(0, options.clientHeight - meBtn.offsetHeight);
+
+      const randomLeft = Math.random() * maxLeft;
+      const randomTop = Math.random() * maxTop;
+
+      meBtn.style.position = 'absolute';
+      meBtn.style.left = `${randomLeft}px`;
+      meBtn.style.top = `${randomTop}px`;
+      meBtn.style.zIndex = '2';
+    }
+
+    meBtn.addEventListener('mouseenter', () => {
+      moveMeButton();
+      meBtn.addEventListener('mouseenter', moveMeButton);
+    });
+
+    const secretWord = 'APADIYA';
+    const maxAttempts = 6;
+    const wordLength = secretWord.length;
+    let currentRow = 0;
+    let currentCol = 0;
+    let gameOver = false;
+
+    function createWordleGrid() {
+      const grid = document.getElementById('wordle-grid');
+      for (let row = 0; row < maxAttempts; row++) {
+        const rowEl = document.createElement('div');
+        rowEl.className = 'wordle-grid-row';
+        for (let col = 0; col < wordLength; col++) {
+          const cell = document.createElement('div');
+          cell.className = 'wordle-cell';
+          cell.dataset.row = row;
+          cell.dataset.col = col;
+          rowEl.appendChild(cell);
+        }
+        grid.appendChild(rowEl);
+      }
+    }
+
+    function createKeyboard() {
+      const letters = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];
+      const keyboard = document.getElementById('wordle-keyboard');
+
+      const topRow = document.createElement('div');
+      topRow.className = 'keyboard-row';
+      letters[0].split('').forEach(key => topRow.appendChild(createKeyButton(key)));
+      keyboard.appendChild(topRow);
+
+      const middleRow = document.createElement('div');
+      middleRow.className = 'keyboard-row';
+      letters[1].split('').forEach(key => middleRow.appendChild(createKeyButton(key)));
+      keyboard.appendChild(middleRow);
+
+      const bottomRow = document.createElement('div');
+      bottomRow.className = 'keyboard-row';
+      bottomRow.appendChild(createKeyButton('ENTER', 'large-key'));
+      letters[2].split('').forEach(key => bottomRow.appendChild(createKeyButton(key)));
+      bottomRow.appendChild(createKeyButton('⌫', 'large-key'));
+      keyboard.appendChild(bottomRow);
+    }
+
+    function createKeyButton(key, extraClass = '') {
+      const keyBtn = document.createElement('button');
+      keyBtn.className = `keyboard-key ${extraClass}`.trim();
+      keyBtn.textContent = key;
+      keyBtn.addEventListener('click', () => handleKey(key));
+      return keyBtn;
+    }
+
+    function handleKey(key) {
+      if (gameOver) return;
+      if (key === 'ENTER') {
+        submitGuess();
+      } else if (key === '⌫') {
+        deleteLetter();
+      } else if (/^[A-Z]$/.test(key)) {
+        addLetter(key);
+      }
+    }
+
+    function addLetter(letter) {
+      if (currentCol >= wordLength || currentRow >= maxAttempts) return;
+      const cell = getCell(currentRow, currentCol);
+      cell.textContent = letter;
+      currentCol += 1;
+    }
+
+    function deleteLetter() {
+      if (currentCol <= 0 || currentRow >= maxAttempts) return;
+      currentCol -= 1;
+      const cell = getCell(currentRow, currentCol);
+      cell.textContent = '';
+    }
+
+    function submitGuess() {
+      const message = document.getElementById('wordle-message');
+      if (currentCol !== wordLength) {
+        message.innerText = `Enter ${wordLength} letters first.`;
+        return;
+      }
+
+      const guess = Array.from({ length: wordLength }, (_, i) => getCell(currentRow, i).textContent).join('');
+      const solutionLetters = secretWord.split('');
+      const statuses = Array(wordLength).fill('wrong');
+
+      for (let i = 0; i < wordLength; i++) {
+        if (guess[i] === secretWord[i]) {
+          statuses[i] = 'correct';
+          solutionLetters[i] = null;
+        }
+      }
+
+      for (let i = 0; i < wordLength; i++) {
+        if (statuses[i] === 'correct') continue;
+        const index = solutionLetters.indexOf(guess[i]);
+        if (index !== -1) {
+          statuses[i] = 'present';
+          solutionLetters[index] = null;
+        }
+      }
+
+      statuses.forEach((status, i) => {
+        const cell = getCell(currentRow, i);
+        cell.classList.add(status);
+        updateKeyboardKey(guess[i], status);
+      });
+
+      if (guess === secretWord) {
+        message.innerText = 'Yess, you did it! 🥳💖';
+        gameOver = true;
+        return;
+      }
+
+      currentRow += 1;
+      currentCol = 0;
+
+      if (currentRow >= maxAttempts) {
+        message.innerText = `No more guesses! The word was ${secretWord} mf so easyyyyy😡😡😡😡.`;
+        gameOver = true;
+      } else {
+        message.innerText = `Try again! ${maxAttempts - currentRow} guesses left.`;
+      }
+    }
+
+    function getCell(row, col) {
+      return document.querySelector(`.wordle-cell[data-row='${row}'][data-col='${col}']`);
+    }
+
+    function updateKeyboardKey(letter, status) {
+      const keyboardKey = Array.from(document.querySelectorAll('.keyboard-key')).find(key => key.textContent === letter);
+      if (!keyboardKey) return;
+      if (keyboardKey.classList.contains('correct')) return;
+      if (keyboardKey.classList.contains('present') && status === 'wrong') return;
+      if (status === 'correct') {
+        keyboardKey.classList.remove('present', 'wrong');
+        keyboardKey.classList.add('correct');
+      } else if (status === 'present') {
+        keyboardKey.classList.remove('wrong');
+        keyboardKey.classList.add('present');
+      } else if (status === 'wrong') {
+        if (!keyboardKey.classList.contains('present') && !keyboardKey.classList.contains('correct')) {
+          keyboardKey.classList.add('wrong');
+        }
+      }
+    }
+
+    createWordleGrid();
+    createKeyboard();
+    window.addEventListener('keydown', event => {
+      if (gameOver) return;
+      const key = event.key;
+      if (key === 'Enter') {
+        handleKey('ENTER');
+      } else if (key === 'Backspace') {
+        handleKey('⌫');
+      } else if (/^[a-zA-Z]$/.test(key)) {
+        handleKey(key.toUpperCase());
+      }
+    });
+
+    const hugButton = document.getElementById('hug-button');
+    const hugCounter = document.getElementById('hug-counter');
+    const hugResult = document.getElementById('hug-result');
+    const hugOverlay = document.getElementById('hug-overlay');
+    let hugHold = false;
+    let hugActive = false;
+    let hugAmount = 0;
+    let hugInterval = null;
+    let hugHoldStartTimeout = null;
+    let hugProgress = 0;
+
+    function beginHugHold() {
+      hugActive = true;
+      hugButton.classList.add('holding');
+      hugOverlay.classList.add('active');
+      hugResult.innerText = 'Sending virtual cuddles 🫂 and kisses 💋 across the distance...';
+      hugInterval = setInterval(() => {
+        hugAmount += 1;
+        hugProgress = Math.min(100, hugProgress + 8);
+        hugCounter.innerText = `Held ${hugAmount} times`;
+        hugButton.style.setProperty('--hug-progress', `${hugProgress}%`);
+        createHugParticle();
+      }, 300);
+    }
+
+    function startHugHold() {
+      if (hugHold) return;
+      hugHold = true;
+      hugProgress = 0;
+      hugButton.style.setProperty('--hug-progress', '0%');
+      hugResult.innerText = 'Keep holding to build the hug...';
+      hugHoldStartTimeout = setTimeout(() => {
+        beginHugHold();
+      }, 500);
+    }
+
+    function stopHugHold() {
+      hugHold = false;
+      clearTimeout(hugHoldStartTimeout);
+      hugHoldStartTimeout = null;
+
+      if (hugActive) {
+        hugActive = false;
+        hugOverlay.classList.remove('active');
+        hugButton.classList.remove('holding');
+        clearInterval(hugInterval);
+        hugInterval = null;
+        hugResult.innerText = `Cuddles sent! ${hugAmount} glowing hugs are on their way. 💞`;
+      } else {
+        hugResult.innerText = 'Hold a little longer to send the hug.';
+      }
+    }
+
+    function createHugParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'hug-particle';
+      const size = 12 + Math.random() * 18;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.background = `rgba(255, 138, 191, ${0.6 + Math.random() * 0.4})`;
+      hugOverlay.appendChild(particle);
+      setTimeout(() => particle.remove(), 1600);
+    }
+
+    hugButton.addEventListener('pointerdown', startHugHold);
+    hugButton.addEventListener('pointerup', stopHugHold);
+    hugButton.addEventListener('pointerleave', stopHugHold);
+    hugButton.addEventListener('pointercancel', stopHugHold);
+    hugButton.addEventListener('contextmenu', event => event.preventDefault());
+
+    const finaleCard = document.getElementById('finale-card');
+    const defuseButton = document.getElementById('defuse-button');
+    const finaleMsg = document.getElementById('finale-msg');
+    const finaleBomb = document.getElementById('finale-bomb');
+
+    function revealFinale() {
+      finaleCard.classList.remove('finale-hidden');
+      finaleCard.classList.add('finale-visible');
+    }
+
+    function explodeBomb() {
+      finaleBomb.textContent = '💥';
+      finaleBomb.classList.remove('throbbing');
+      finaleMsg.innerHTML = '<strong>BOOM!</strong> Too late, I exploded because I miss you so much! Come fast and meet me!🥺🥺 ';
+      defuseButton.disabled = true;
+      defuseButton.textContent = 'Boomed!';
+      defuseButton.style.background = 'rgba(255, 120, 0, 0.95)';
+      defuseButton.style.boxShadow = '0 0 35px rgba(255, 120, 0, 0.65)';
+    }
+
+    defuseButton.addEventListener('click', explodeBomb);
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          revealFinale();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(finaleCard);
+  </script>
+
+</body>
+</html>
